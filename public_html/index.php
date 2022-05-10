@@ -1,6 +1,5 @@
 <?php
-    // ...
-  //namespace thomas;
+  // include ("/public_html/functions/thomas.php");
   function check_Password($password) {
 
     $messagedebut='<ul class="list-group" style="max-width: 325px">le mot de passe doit contenir:';

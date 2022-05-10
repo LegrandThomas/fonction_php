@@ -1,6 +1,5 @@
 <?php
 //namespace thomas;
-
 function check_Password($password) {
 
     $messagedebut='<ul class="list-group" style="max-width: 325px">le mot de passe doit contenir:';
@@ -15,9 +14,9 @@ function check_Password($password) {
     echo '<h1 class="text-center">thomas</h1>';
     ?>
     <div>
-    Mot de passe :     <?php echo $_GET['password'];
+    Mot de passe :    </div><div id="mdp">  <?php echo $_GET['password'];
          ?>
-    </div>
+   </div>
     <div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; force du mot de passe  </div>
     <?php
     $pwd=$password;
@@ -78,4 +77,3 @@ function check_Password($password) {
            echo $messagefinal;
                 
 }
-
