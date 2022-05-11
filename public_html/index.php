@@ -57,12 +57,14 @@ include_once("functions/thomas.php");
                 </div>
                 </div>
                 </div>
-
+                </div>
               </div>
-                <!--<form action='index.php?password=.$result'  method="GET" >
-               <button  type="submit" onclick ="affiche()"> entrer votre mot de passe </button >
-              <a href='index.php?password=' <?php echo $password; ?>><button onclick ="affiche()"> entrer votre mot de passe </button ></a>
-              </form>
+              </div>
+             <!-- soumettre mdp en js
+                <form method="get" name="form" action="index.php">
+                <input type="text" placeholder="entrer mdp" name="password">
+                <input type="submit" value="tester votre mdp">
+                </form>
 
                 </div>
                 <script type="text/javascript">
@@ -84,15 +86,17 @@ include_once("functions/thomas.php");
                <?php
                    //entreMDP();
                // $_GET[$password];
-               $result = $_GET['password'];
+              $result = $_GET['password'];
                //print_r ($password);
                //print_r ($test);
                //print_r ($result);
               
                ?>
-               </div>
-                 -->                
+               -->
+              
+                              
                <?php
+               
             }
             else {
               
@@ -112,7 +116,7 @@ include_once("functions/thomas.php");
            
             ?>
 
-        </div>
+       
        
 
 
