@@ -29,7 +29,7 @@ function checkPassword($password) {
     if( preg_match("#[a-z]+#", $pwd) ) {
         $valeurbarre=($valeurbarre+20);
         $a='<div class="progress"><div class="progress-bar progress-bar-striped bg-danger';        
-    }
+                                        }
         else  {
              $message=$message.'<li class="list-group-item">1 minuscule</li>';
              $messagefinal=$messagedebut.$message.$messagefin;
@@ -47,8 +47,7 @@ function checkPassword($password) {
             $valeurbarre=($valeurbarre+20);
             $a='<div class="progress"><div class="progress-bar progress-bar-striped bg-info';
             $progressfin=$a.$a1.$valeurbarre.$b.$valeurbarre.$c;
-                                            }
-    
+                                        }
         else  {
             $message.='<li class="list-group-item">1 caractère spécial</li>';
             $messagefinal=$messagedebut.$message.$messagefin;
@@ -66,18 +65,17 @@ function checkPassword($password) {
             $valeurbarre=($valeurbarre+20);
             $a='<div class="progress"><div class="progress-bar progress-bar-striped bg-success';
             $progressfin=$a.$a1.$valeurbarre.$b.$valeurbarre.$c;
-                                            }
+                                }
         else  {
             $message.='<li class="list-group-item">12 caractères </li>';
             $messagefinal=$messagedebut.$message.$messagefin;
-            }
+              }
            $progressfin=$a.$a1.$valeurbarre.$b.$valeurbarre.$c;
            echo $progressfin;
            echo '</div>';
            echo '<br>';
            echo $messagefinal;
 }
-
 /*namespace toto;
 function checkPassword($password) {
     echo '<h1 class="text-center">thomas</h1>';
