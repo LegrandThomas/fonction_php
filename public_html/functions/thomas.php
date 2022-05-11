@@ -8,7 +8,7 @@ function checkPassword($password) {
     $messagefin='</ul>';
     $messagefinal='<div class="p-3 mb-2 bg-success text-white">&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;ok</div>';
     $valeurbarre="0";
-    $a='<div class="progress"><div class="progress-bar" role="progressbar" style="width: ';
+    $a='<div class="progress"><div class="progress-bar progress-bar-striped" role="progressbar" style="width: ';
     $b='%; aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">';
     $c='%</div>';
     $progressfin=$a.$valeurbarre.$b.$valeurbarre.$c;
@@ -80,3 +80,8 @@ function checkPassword($password) {
           
                 
 }
+
+/*namespace toto;
+function checkPassword($password) {
+    echo '<h1 class="text-center">thomas</h1>';
+}*/

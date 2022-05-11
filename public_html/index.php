@@ -1,5 +1,5 @@
 <?php
-include("functions/thomas.php");
+include_once("functions/thomas.php");
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +28,7 @@ include("functions/thomas.php");
                 // ...
 
                 thomas\checkPassword($password);
-
+               // toto\checkPassword($password);
                ?>
             </div>
             
@@ -77,7 +77,6 @@ include("functions/thomas.php");
                 let mdpuser=prompt("enter votre mot de passe", "");
                 localStorage.setItem('password', mdpuser);
                 var test = localStorage.getItem('password');
-              
                 return test;
                                        }     
                </script>
