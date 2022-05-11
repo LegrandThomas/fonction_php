@@ -1,65 +1,50 @@
 <?php
 include_once("functions/thomas.php");
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
         <title>PHP - Les fonctions</title>
-
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
     </head>
     <body>
   
-        <div class="container py-3" >
-
+        <div class="container py-3">
             <?php
-
             if (isset($_GET['password'])) {
-
                 $password = $_GET['password'];
-
                 // I use my personal function with my namespace
                 // ...
-
                 thomas\checkPassword($password);
                // toto\checkPassword($password);
                ?>
-            </div>
-            
-                  <br>
-                  <div class="text-center">
+        </div><br>
+        <div class="text-center">
                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                  tester votre mot de pass
                  </button>
-                 </div>
+        </div>
 
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
                 <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">tester votre mdp</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">tester votre mdp</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="get" name="form" action="index.php">
+                            <input  type="text" placeholder="Enter mdp" name="password">
+                            <input type="submit" value="test mdp">
+                        </form>
+                    </div>
+                    <div class="modal-footer"></div>
                 </div>
-                <div class="modal-body">
-                <form method="get" name="form" action="index.php">
-               <input  type="text" placeholder="Enter mdp" name="password">
-               <input type="submit" value="test mdp">
-               </form>
-                </div>
-                <div class="modal-footer">
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-              </div>
-              </div>
+            </div>
+        </div>
+            
              <!-- soumettre mdp en js
                 <form method="get" name="form" action="index.php">
                 <input type="text" placeholder="entrer mdp" name="password">
@@ -76,25 +61,13 @@ include_once("functions/thomas.php");
                                     }   
 
                 function  entreMDP(){
-                let mdpuser=prompt("enter votre mot de passe", "");
+                let mdpuser=prompt("enter votre mot de passe pour test js", "");
                 localStorage.setItem('password', mdpuser);
                 var test = localStorage.getItem('password');
                 return test;
                                        }     
                </script>
-             
-               <?php
-                   //entreMDP();
-               // $_GET[$password];
-              $result = $_GET['password'];
-               //print_r ($password);
-               //print_r ($test);
-               //print_r ($result);
-              
-               ?>
-               -->
-              
-                              
+               -->        
                <?php
                
             }
