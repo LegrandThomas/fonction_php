@@ -3,10 +3,10 @@ namespace thomas;
 
 function checkPassword($password) {
 
-    $messagedebut='<ul class="list-group" style="max-width: 325px">le mot de passe doit contenir:';
+    $messagedebut='<ul class="list-group" style="max-width: 325px"><li class="list-group-item active">le mot de passe doit contenir:';
     $message="";
     $messagefin='</ul>';
-
+    $messagefinal='<div class="p-3 mb-2 bg-success text-white">&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;ok</div>';
     $valeurbarre="0";
     $a='<div class="progress"><div class="progress-bar" role="progressbar" style="width: ';
     $b='%; aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">';
@@ -65,7 +65,7 @@ function checkPassword($password) {
         if( strlen($pwd) > 12 ) {
             $valeurbarre=($valeurbarre+20);
             $progressfin=$a.$valeurbarre.$b.$valeurbarre.$c;
-            $messagefinal='ok';
+            
                                             }
         else  {
             $message.='<li class="list-group-item">contient + de 12 caractères</li>';
@@ -75,6 +75,8 @@ function checkPassword($password) {
             
            echo $progressfin;
            echo '</div>';
+           echo '<br>';
            echo $messagefinal;
+          
                 
 }

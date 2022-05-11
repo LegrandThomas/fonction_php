@@ -1,7 +1,5 @@
 <?php
-   
-   
-
+include("functions/thomas.php");
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +15,8 @@
 
     </head>
     <body>
-   
-        <div class="container py-3">
+  
+        <div class="container py-3" >
 
             <?php
 
@@ -28,46 +26,43 @@
 
                 // I use my personal function with my namespace
                 // ...
-                include(".//functions/thomas.php");
-                
-               thomas\checkPassword($password);
-               
+
+                thomas\checkPassword($password);
+
                ?>
-              <!--<div class="modal-dialog modal-sm">-->
-                  <hr>
-                  <div>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  tester votre mot de pass
-</button>
             </div>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <form method="get" name="form" action="index.php">
-               
+            
+                  <br>
+                  <div class="text-center">
+                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                 tester votre mot de pass
+                 </button>
+                 </div>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">tester votre mdp</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <form method="get" name="form" action="index.php">
                <input  type="text" placeholder="Enter mdp" name="password">
-         
                <input type="submit" value="test mdp">
                </form>
-      </div>
-      <div class="modal-footer">
-       
-      </div>
-    </div>
-  </div>
-</div>
-               
-               <!-- </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+                </div>
+                </div>
+                </div>
 
-               <form action="index.php?password=motdepasse" method="GET" >
+              </div>
+                <!--<form action='index.php?password=.$result'  method="GET" >
                <button  type="submit" onclick ="affiche()"> entrer votre mot de passe </button >
-               <a href='index.php?password=.$password'><button onclick ="affiche()"> entrer votre mot de passe </button ></a>
-                </form>
+              <a href='index.php?password=' <?php echo $password; ?>><button onclick ="affiche()"> entrer votre mot de passe </button ></a>
+              </form>
 
                 </div>
                 <script type="text/javascript">
@@ -82,19 +77,22 @@
                 let mdpuser=prompt("enter votre mot de passe", "");
                 localStorage.setItem('password', mdpuser);
                 var test = localStorage.getItem('password');
-                  
-                return mdpuser;
+              
+                return test;
                                        }     
                </script>
-                -->
+             
                <?php
                    //entreMDP();
                // $_GET[$password];
                $result = $_GET['password'];
-               
+               //print_r ($password);
+               //print_r ($test);
+               //print_r ($result);
+              
                ?>
                </div>
-
+                 -->                
                <?php
             }
             else {
