@@ -1,91 +1,6 @@
 <?php
-  // include ("/public_html/functions/thomas.php");
-  function check_Password($password) {
-
-    $messagedebut='<ul class="list-group" style="max-width: 325px">le mot de passe doit contenir:';
-    $message="";
-    $messagefin="</ul>";
-
-    $valeurbarre="0";
-    $a='<div class="progress"><div class="progress-bar" role="progressbar" style="width: ';
-    $b='%; aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">';
-    $c='%</div>';
-    $progressfin=$a.$valeurbarre.$b.$valeurbarre.$c;
-    echo '<h1 class="text-center">thomas</h1>';
-    ?>
-    <div>
-    Mot de passe :    </div><div id="mdp">  <?php echo $_GET['password'];
-         ?>
-   </div>
-    <div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; force du mot de passe  </div>
-    <?php
-    $pwd=$password;
-    if( preg_match("#[a-z]+#", $pwd) ) {
-        
-        $valeurbarre=($valeurbarre+20);
-        $progressfin=$a.$valeurbarre.$b.$valeurbarre.$c;
-
-    }
-        else  {
-             $message=$message.'<li class="list-group-item">contient une minuscule</li>';
-             $messagefinal=$messagedebut.$message.$messagefin;
-            
-             
-              }
-        if( preg_match("#[A-Z]+#", $pwd) ) {
-            $valeurbarre=($valeurbarre+20);
-            $progressfin=$a.$valeurbarre.$b.$valeurbarre.$c;
-             
-                                            }
-        else  {
-            $message.='<li class="list-group-item">contient une Majuscule</li>';
-            $messagefinal=$messagedebut.$message.$messagefin;
-           
-              }
-        if(preg_match("#\W+#", $pwd) ) {
-            $valeurbarre=($valeurbarre+20);
-            $progressfin=$a.$valeurbarre.$b.$valeurbarre.$c;
-                                            }
-    
-        else  {
-            $message.='<li class="list-group-item">contient un caractère spécial</li>';
-            $messagefinal=$messagedebut.$message.$messagefin;
-         
-              }
-        if( preg_match("#[0-9]+#", $pwd) ) {
-            $valeurbarre=($valeurbarre+20);
-            $progressfin=$a.$valeurbarre.$b.$valeurbarre.$c;
-                                            }
-        else  {
-            $message.='<li class="list-group-item">contient un nombre</li>';
-            $messagefinal=$messagedebut.$message.$messagefin;
-           
-              }
-        if( strlen($pwd) > 12 ) {
-            $valeurbarre=($valeurbarre+20);
-            $progressfin=$a.$valeurbarre.$b.$valeurbarre.$c;
-            $messagefinal='ok';
-                                            }
-        else  {
-            $message.='<li class="list-group-item">contient + de 12 caractères</li>';
-            $messagefinal=$messagedebut.$message.$messagefin;
-           
-            }
-            
-           echo $progressfin;
-           echo '</div>';
-           echo $messagefinal;
-                
-}
-
-function  entreMDP(){
-    echo '<script type="text/javascript"> ';
-    echo 'var inputname = prompt("entrer un mot de passe", "");';
-    echo 'alert(inputname);';
-    echo '</script>';
-}
-
-
+   
+   
 
 ?>
 
@@ -113,9 +28,74 @@ function  entreMDP(){
 
                 // I use my personal function with my namespace
                 // ...
+                include(".//functions/thomas.php");
+                
+               thomas\checkPassword($password);
                
+               ?>
+              <!--<div class="modal-dialog modal-sm">-->
+                  <hr>
+                  <div>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  tester votre mot de pass
+</button>
+            </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form method="get" name="form" action="index.php">
+               
+               <input  type="text" placeholder="Enter mdp" name="password">
+         
+               <input type="submit" value="test mdp">
+               </form>
+      </div>
+      <div class="modal-footer">
+       
+      </div>
+    </div>
+  </div>
+</div>
+               
+               <!-- </div>
 
-               check_Password($password);
+               <form action="index.php?password=motdepasse" method="GET" >
+               <button  type="submit" onclick ="affiche()"> entrer votre mot de passe </button >
+               <a href='index.php?password=.$password'><button onclick ="affiche()"> entrer votre mot de passe </button ></a>
+                </form>
+
+                </div>
+                <script type="text/javascript">
+                var receveur = document.getElementById("mdp");
+                function affiche() {
+                receveur.innerHTML = entreMDP();
+                $password=receveur.innerHTML;
+                
+                                    }   
+
+                function  entreMDP(){
+                let mdpuser=prompt("enter votre mot de passe", "");
+                localStorage.setItem('password', mdpuser);
+                var test = localStorage.getItem('password');
+                  
+                return mdpuser;
+                                       }     
+               </script>
+                -->
+               <?php
+                   //entreMDP();
+               // $_GET[$password];
+               $result = $_GET['password'];
+               
+               ?>
+               </div>
+
+               <?php
             }
             else {
               
@@ -136,15 +116,7 @@ function  entreMDP(){
             ?>
 
         </div>
-        <div>
-        <button onclick ="entreMDP()"> entrer votre mot de passe </button >
-     
-    
-        <?php
-           // entreMDP();
-
-        ?>
-        </div>
+       
 
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>

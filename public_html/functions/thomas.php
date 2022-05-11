@@ -1,10 +1,11 @@
 <?php
-//namespace thomas;
-function check_Password($password) {
+namespace thomas;
+
+function checkPassword($password) {
 
     $messagedebut='<ul class="list-group" style="max-width: 325px">le mot de passe doit contenir:';
     $message="";
-    $messagefin="</ul>";
+    $messagefin='</ul>';
 
     $valeurbarre="0";
     $a='<div class="progress"><div class="progress-bar" role="progressbar" style="width: ';
